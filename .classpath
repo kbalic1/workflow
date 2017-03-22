@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="workflow-Aplikacije/src/main/java"/>
+	<classpathentry kind="src" path="workflow-Aplikacije/src/test/java"/>
+	<classpathentry kind="src" path="workflow-Oglasi/src/main/java"/>
+	<classpathentry kind="src" path="workflow-Oglasi/src/test/java"/>
+	<classpathentry kind="src" path="workflow-Proces/src/main/java"/>
+	<classpathentry kind="src" path="workflow-Proces/src/test/java"/>
+	<classpathentry kind="lib" path="workflow-Aplikacije/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="workflow-Oglasi/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="workflow-Proces/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
