@@ -1,8 +1,7 @@
 package com.workflow.workflowapplications.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Applicant {
@@ -10,6 +9,7 @@ public class Applicant {
     @Id
     @GeneratedValue
     private Long Id;
+
     private String firstName;
     private String lastName;
     private String email;
@@ -68,5 +68,4 @@ public class Applicant {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }

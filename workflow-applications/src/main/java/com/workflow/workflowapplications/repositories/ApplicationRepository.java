@@ -7,7 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface ApplicationRepository extends CrudRepository<Application, Long> {
-    List<Application> findByApplicant(Applicant applicant);
-    List<Application> findByJobOpeningId(Long jobOpeningId);
-    List<Application> findByStatus(String status);
+    List<Application> findByApplicantAndJobOpeningIdAndStatus(Applicant applicant, Long jobOpeningId, String status);
 }

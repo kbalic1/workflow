@@ -49,7 +49,7 @@ public class ApplicantController {
         return ResponseEntity.ok().build();
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public ResponseEntity<?> updateApplicant(@PathVariable("id") Long id, @RequestBody Applicant applicant) {
         applicantService.update(applicant);
         return ResponseEntity.ok().build();
