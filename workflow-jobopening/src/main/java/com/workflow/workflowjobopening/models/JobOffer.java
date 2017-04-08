@@ -1,4 +1,4 @@
-package models;
+package com.workflow.workflowjobopening.models;
 
 import javax.persistence.*;
 import java.util.Date;
