@@ -13,6 +13,8 @@ import java.util.List;
 @Service
 public class EvaluationService {
 
+    private EvaluationRepository evaluationRepository;
+
     @Autowired
     public void setEvaluationRepository(EvaluationRepository evaluationRepository) {
         this.evaluationRepository = evaluationRepository;

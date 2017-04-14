@@ -39,7 +39,7 @@ public class EvaluationController {
     public ResponseEntity<?> addEvaluation(@RequestBody Evaluation evaluation) {
         Long evaluationId = evaluationService.add(evaluation);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .buildAndExpand(applicationId)
+                .buildAndExpand(evaluationId)
                 .toUri();
         return ResponseEntity.created(location).build();
     }
