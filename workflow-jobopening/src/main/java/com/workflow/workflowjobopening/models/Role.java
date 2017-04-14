@@ -1,28 +1,26 @@
 package com.workflow.workflowjobopening.models;
 
-import javax.persistence.*;
+import com.workflow.workflowjobopening.modelsIn.RoleIn;
 
-/**
- * Created by tile on 4/8/2017.
- */
+import javax.persistence.*;
 
 @Entity
 public class Role {
 
     @Id
     @GeneratedValue
-    private Long Id;
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "stageId", referencedColumnName = "Id")
+    @JoinColumn(name = "stageId", referencedColumnName = "id")
     private Stage stage;
 
     @ManyToOne
-    @JoinColumn (name = "jobOfferId", referencedColumnName = "Id")
+    @JoinColumn (name = "jobOfferId", referencedColumnName = "id")
     private JobOffer jobOffer;
 
     @ManyToOne
-    @JoinColumn (name = "userId", referencedColumnName = "Id")
+    @JoinColumn (name = "userId", referencedColumnName = "id")
     private User user;
 
     public Role() {
@@ -34,12 +32,18 @@ public class Role {
         this.user = user;
     }
 
+    public Role(RoleIn roleIn) {
+        this.stage.setId(roleIn.getStage());
+        this.jobOffer.setId(roleIn.getJobOffer());
+        this.user.setId(roleIn.getUser());
+    }
+
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        id = id;
     }
 
     public Stage getStage() {

@@ -1,50 +1,20 @@
-package com.workflow.workflowjobopening.models;
+package com.workflow.workflowjobopening.modelsIn;
 
-import com.workflow.workflowjobopening.modelsIn.UserIn;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-/**
- * Created by tile on 4/8/2017.
- */
-@Entity
-public class User {
-
-
-    @Id
-    @GeneratedValue
-    private Long id;
+public class UserIn {
 
     private String firstName;
     private String lastName;
     private String email;
     private String password;
 
-    public User() {
+    public UserIn() {
     }
 
-    public User(String firstName, String lastName, String email, String password) {
+    public UserIn(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-    }
-
-    public User(UserIn userIn) {
-        this.firstName = userIn.getFirstName();
-        this.lastName = userIn.getLastName();
-        this.email = userIn.getEmail();
-        this.password = userIn.getPassword();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        id = id;
     }
 
     public String getFirstName() {

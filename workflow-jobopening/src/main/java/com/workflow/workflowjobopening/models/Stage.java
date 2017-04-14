@@ -1,5 +1,7 @@
 package com.workflow.workflowjobopening.models;
 
+import com.workflow.workflowjobopening.modelsIn.StageIn;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,7 +15,7 @@ public class Stage {
 
     @Id
     @GeneratedValue
-    private Long Id;
+    private Long id;
 
     private String name;
 
@@ -24,12 +26,16 @@ public class Stage {
         this.name = name;
     }
 
+    public Stage(StageIn stageIn) {
+        this.name = stageIn.getName();
+    }
+
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        id = id;
     }
 
     public String getName() {

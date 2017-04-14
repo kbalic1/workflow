@@ -1,35 +1,28 @@
-package com.workflow.workflowjobopening.models;
+package com.workflow.workflowjobopening.modelsOut;
 
-import com.workflow.workflowjobopening.modelsIn.JobOfferIn;
+import com.workflow.workflowjobopening.models.JobOffer;
+import com.workflow.workflowjobopening.models.User;
 
-import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by tile on 4/8/2017.
  */
 
-@Entity
-public class JobOffer {
+public class JobOfferOut {
 
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String codeBookId;
+    private Long Id;
     private String title;
     private Date deadline;
     private  Boolean published;
     private int maxNumberApplicants;
-
-    @ManyToOne
-    @JoinColumn (name = "userId", referencedColumnName = "id")
     private User user;
 
-    public JobOffer() {
+    public JobOfferOut() {
     }
 
 
-    public JobOffer(String title, Date deadline, Boolean published, int maxNumberApplicants, User user) {
+    public JobOfferOut(String title, Date deadline, Boolean published, int maxNumberApplicants, User user) {
         this.title = title;
         this.deadline = deadline;
         this.published = published;
@@ -37,28 +30,21 @@ public class JobOffer {
         this.user = user;
     }
 
-    public JobOffer(JobOfferIn jobOfferIn) {
-        this.title = jobOfferIn.getTitle();
-        this.deadline = jobOfferIn.getDeadline();
-        this.published = jobOfferIn.getPublished();
-        this.maxNumberApplicants = jobOfferIn.getMaxNumberApplicants();
-       // this.user = jobOfferIn.getUser();
+    public JobOfferOut(JobOffer jobOffer) {
+        this.Id = jobOffer.getId();
+        this.title = jobOffer.getTitle();
+        this.deadline = jobOffer.getDeadline();
+        this.published = jobOffer.getPublished();
+        this.maxNumberApplicants = jobOffer.getMaxNumberApplicants();
+        this.user = null;
     }
 
-    public Long getId() {
-        return id;
+    public long getId() {
+        return Id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCodeBookId() {
-        return codeBookId;
-    }
-
-    public void setCodeBookId(String codeBookId) {
-        this.codeBookId = codeBookId;
+    public void setId(long id) {
+        Id = id;
     }
 
     public String getTitle() {
