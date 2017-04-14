@@ -22,7 +22,7 @@ public class EvaluationController {
 
     private EvaluationService evaluationService;
 
-    @RequestMapping(value = "/{id", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Evaluation getEvaluation(@PathVariable("id") long id) {
         return evaluationService.get(id);
     }
