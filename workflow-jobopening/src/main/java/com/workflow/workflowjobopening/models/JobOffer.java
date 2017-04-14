@@ -1,15 +1,13 @@
 package com.workflow.workflowjobopening.models;
 
 import com.workflow.workflowjobopening.modelsIn.JobOfferIn;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by tile on 4/8/2017.
- */
-
 @Entity
+@Component
 public class JobOffer {
 
     @Id

@@ -7,6 +7,9 @@ import com.workflow.workflowjobopening.repositories.JobOfferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,6 +21,22 @@ public class JobOfferService {
 
     public List<JobOfferOut> exportAsList(){
         return jobOfferRepository.findAll().stream().map(p -> new JobOfferOut(p)).collect(Collectors.toList());
+    }
+
+    public List<JobOfferOut> getAllPublishedJobOffers(){
+        return jobOfferRepository.findAllByPublished(true).stream().map(p -> new JobOfferOut(p)).collect(Collectors.toList());
+    }
+
+    public List<JobOfferOut> getAllBeforeDate(String date){
+
+        Date dateBefore = new Date();
+        try {
+            dateBefore = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+        } catch (ParseException e) {
+
+        }
+
+        return jobOfferRepository.getAllBeforeDeadlineDate(dateBefore);
     }
 
     public Boolean importFromInput(JobOfferIn jobOfferIn){
