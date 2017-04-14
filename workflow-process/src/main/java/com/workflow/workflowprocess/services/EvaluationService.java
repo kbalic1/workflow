@@ -7,7 +7,6 @@ import com.workflow.workflowprocess.repositories.EvaluationRepository;
 
 import java.util.Collection;
 import java.util.List;
-
 /**
  * Created by Tarik on 4/8/17.
  */

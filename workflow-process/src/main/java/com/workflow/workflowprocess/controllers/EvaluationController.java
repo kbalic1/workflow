@@ -29,7 +29,7 @@ public class EvaluationController {
 
     @RequestMapping(method = RequestMethod.GET)
     public Collection<Evaluation> getEvaluations(@RequestParam("applicationId") Long applicationId,
-                                                 @Requestparam("stageId") Long stageId,
+                                                 @RequestParam("stageId") Long stageId,
                                                  @RequestParam("evaluation") int evaluation,
                                                  @RequestParam("comment") String comment) {
         return evaluationService.getEvaluations(applicationId, stageId, evaluation, comment);
