@@ -17,7 +17,7 @@ public class JobOfferIn {
     private  Boolean published;
     private int maxNumberApplicants;
 
-    //private User user;
+    private User user;
 
     public JobOfferIn() {
     }
@@ -28,7 +28,7 @@ public class JobOfferIn {
         this.deadline = deadline;
         this.published = published;
         this.maxNumberApplicants = maxNumberApplicants;
-        //this.user = user;
+        this.user = user;
     }
 
     public JobOfferIn(JobOffer jobOffer) {
@@ -36,7 +36,7 @@ public class JobOfferIn {
         this.deadline = jobOffer.getDeadline();
         this.published = jobOffer.getPublished();
         this.maxNumberApplicants = jobOffer.getMaxNumberApplicants();
-       // this.user = jobOffer.getUser();
+        this.user = jobOffer.getUser();
     }
 
 
@@ -71,12 +71,12 @@ public class JobOfferIn {
     public void setMaxNumberApplicants(int maxNumberApplicants) {
         this.maxNumberApplicants = maxNumberApplicants;
     }
-/*
-   // public User getUser() {
+
+    public User getUser() {
         return user;
     }
 
-    //public void setUser(User user) {
+    public void setUser(User user) {
         this.user = user;
-    }*/
+    }
 }
