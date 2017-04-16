@@ -20,7 +20,8 @@ public class JobOfferService {
     private JobOfferRepository jobOfferRepository;
 
     public JobOfferOut getById(Long id) {
-        return new JobOfferOut(jobOfferRepository.findOne(id));
+
+        return  new JobOfferOut(jobOfferRepository.findOne(id));
     }
 
     public List<JobOfferOut> exportAsList(){

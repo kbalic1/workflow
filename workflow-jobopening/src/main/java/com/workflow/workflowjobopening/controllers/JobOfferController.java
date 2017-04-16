@@ -1,6 +1,5 @@
 package com.workflow.workflowjobopening.controllers;
 
-import com.workflow.workflowjobopening.models.JobOffer;
 import com.workflow.workflowjobopening.modelsIn.JobOfferIn;
 import com.workflow.workflowjobopening.modelsOut.JobOfferOut;
 import com.workflow.workflowjobopening.services.JobOfferService;
@@ -27,7 +26,7 @@ public class JobOfferController {
 
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public JobOfferOut getById(Long id) {
+    public JobOfferOut getById(@PathVariable("id") Long id) {
         return service.getById(id);
     }
 
