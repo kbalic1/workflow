@@ -51,11 +51,10 @@ public class EvaluationController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<?> updateEvaluation(@PathVariable("id") Long id, @RequestBody Evaluation evaluation) {
+    public ResponseEntity<?> updateEvaluation(@PathVariable("id") Long id,
+                                              @RequestBody Evaluation evaluation) {
         evaluationService.update(evaluation);
         return ResponseEntity.ok().build();
     }
-
-
 
 }
