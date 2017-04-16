@@ -1,5 +1,7 @@
 package com.workflow.workflowapplications.models;
 
+import com.workflow.workflowapplications.models.jobOpenings.JobOffer;
+
 import javax.persistence.*;
 
 
@@ -15,6 +17,16 @@ public class Application {
     private Applicant applicant;
     private Long jobOpeningId;
     private String status;
+
+    public JobOffer getJobOffer() {
+        return jobOffer;
+    }
+
+    public void setJobOffer(JobOffer jobOffer) {
+        this.jobOffer = jobOffer;
+    }
+
+    private JobOffer jobOffer;
 
     public Long getId() {
         return Id;

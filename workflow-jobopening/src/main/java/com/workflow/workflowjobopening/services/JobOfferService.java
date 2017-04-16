@@ -19,6 +19,10 @@ public class JobOfferService {
     @Autowired
     private JobOfferRepository jobOfferRepository;
 
+    public JobOfferOut getById(Long id) {
+        return new JobOfferOut(jobOfferRepository.findOne(id));
+    }
+
     public List<JobOfferOut> exportAsList(){
         return jobOfferRepository.findAll().stream().map(p -> new JobOfferOut(p)).collect(Collectors.toList());
     }

@@ -23,8 +23,13 @@ public class ApplicationController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Application getApplication(@PathVariable("id") Long id) {
-        return applicationService.get(id);
+    public Application getApplication(@PathVariable("id") Long id,
+                                      @RequestParam("withOpening") Boolean withOpening) {
+        if (!withOpening) {
+            return applicationService.get(id);
+        } else {
+            return applicationService.getWithOpening(id);
+        }
     }
 
     @RequestMapping(method = RequestMethod.GET)
