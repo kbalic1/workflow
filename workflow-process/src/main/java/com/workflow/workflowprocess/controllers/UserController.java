@@ -34,6 +34,11 @@ public class UserController {
         return userService.getUsers(firstName, lastName, email);
     }
 
+    @RequestMapping(value = "/name/{firstName}", method = RequestMethod.GET)
+    public Collection<User> getAllWithFirstName(@PathVariable("firstName") String firstName) {
+        return userService.getAllWithFirstName(firstName);
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> addUser(@RequestBody User user) {
         Long userId = userService.add(user);

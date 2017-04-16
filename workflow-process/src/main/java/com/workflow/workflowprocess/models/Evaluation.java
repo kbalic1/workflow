@@ -20,6 +20,14 @@ public class Evaluation {
 
     protected Evaluation() {}
 
+    public Evaluation(Evaluation e){
+        this.user = e.getUser();
+        this.applicationId = e.getApplicationId();
+        this.stageId = e.getStageId();
+        this.evaluation = e.getEvaluation();
+        this.comment = e.getComment();
+    }
+
     public Evaluation(User user, Long applicationId, Long stageId, int evaluation, String comment) {
 
         this.user = user;

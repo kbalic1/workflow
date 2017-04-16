@@ -29,6 +29,10 @@ public class UserService {
         return userRepository.findOne(id);
     }
 
+    public Collection<User> getAllWithFirstName(String firstName){
+        return userRepository.getAllWithFirstName(firstName);
+    }
+
     public Collection<User> getUsers(String firstName, String lastName, String email){
         return userRepository.findByFirstNameAndLastNameAndEmail(firstName, lastName, email);
     }
