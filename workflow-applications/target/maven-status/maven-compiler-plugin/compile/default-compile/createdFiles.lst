@@ -1,9 +1,13 @@
-com/workflow/workflowapplications/models/Applicant.class
+com/workflow/workflowapplications/models/jobopening/User.class
 com/workflow/workflowapplications/controllers/ApplicationController.class
 com/workflow/workflowapplications/WorkflowApplicationsApplication.class
-com/workflow/workflowapplications/repositories/ApplicantRepository.class
-com/workflow/workflowapplications/services/ApplicationService.class
+com/workflow/workflowapplications/models/jobopening/JobOffer.class
+com/workflow/workflowapplications/models/ApplicationExtended.class
 com/workflow/workflowapplications/controllers/ApplicantController.class
 com/workflow/workflowapplications/services/ApplicantService.class
 com/workflow/workflowapplications/models/Application.class
+com/workflow/workflowapplications/models/Applicant.class
+com/workflow/workflowapplications/restclients/JobOpeningClient.class
+com/workflow/workflowapplications/repositories/ApplicantRepository.class
+com/workflow/workflowapplications/services/ApplicationService.class
 com/workflow/workflowapplications/repositories/ApplicationRepository.class

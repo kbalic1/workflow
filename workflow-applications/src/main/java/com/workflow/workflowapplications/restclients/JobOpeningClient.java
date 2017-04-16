@@ -1,7 +1,6 @@
 package com.workflow.workflowapplications.restclients;
 
-import com.workflow.workflowapplications.models.jobOpenings.JobOffer;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.workflow.workflowapplications.models.jobopening.JobOffer;
 import org.springframework.web.client.RestTemplate;
 
 

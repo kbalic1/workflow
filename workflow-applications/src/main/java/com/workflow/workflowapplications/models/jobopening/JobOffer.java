@@ -1,7 +1,6 @@
-package com.workflow.workflowapplications.models.jobOpenings;
+package com.workflow.workflowapplications.models.jobopening;
 
 import java.util.Date;
-
 
 public class JobOffer {
 
@@ -22,6 +21,15 @@ public class JobOffer {
         this.published = published;
         this.maxNumberApplicants = maxNumberApplicants;
         this.user = user;
+    }
+
+    public JobOffer(JobOffer jobOffer) {
+        this.Id = jobOffer.getId();
+        this.title = jobOffer.getTitle();
+        this.deadline = jobOffer.getDeadline();
+        this.published = jobOffer.getPublished();
+        this.maxNumberApplicants = jobOffer.getMaxNumberApplicants();
+        this.user = null;
     }
 
     public long getId() {

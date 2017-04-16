@@ -2,7 +2,8 @@ package com.workflow.workflowapplications.services;
 
 import com.workflow.workflowapplications.models.Applicant;
 import com.workflow.workflowapplications.models.Application;
-import com.workflow.workflowapplications.models.jobOpenings.JobOffer;
+import com.workflow.workflowapplications.models.ApplicationExtended;
+import com.workflow.workflowapplications.models.jobopening.JobOffer;
 import com.workflow.workflowapplications.repositories.ApplicantRepository;
 import com.workflow.workflowapplications.repositories.ApplicationRepository;
 import com.workflow.workflowapplications.restclients.JobOpeningClient;
@@ -37,13 +38,13 @@ public class ApplicationService {
         return applicationRepository.findOne(id);
     }
 
-    public Application getWithOpening(Long id) {
+    public ApplicationExtended getWithOpening(Long id) {
         Application application = this.get(id);
 
         JobOpeningClient jobOpeningClient = new JobOpeningClient();
         JobOffer jobOffer = jobOpeningClient.getJobOpening(application.getJobOpeningId());
-        application.setJobOffer(jobOffer);
-        return application;
+
+        return new ApplicationExtended(application, jobOffer);
     }
 
     public Collection<Application> getApplications(Applicant applicant, Long jobOpeningId, String status) {

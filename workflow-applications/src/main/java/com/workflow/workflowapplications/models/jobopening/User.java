@@ -1,5 +1,4 @@
-package com.workflow.workflowapplications.models.jobOpenings;
-
+package com.workflow.workflowapplications.models.jobopening;
 
 public class User {
 
@@ -13,19 +12,6 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-    }
-
-    public User(User user) {
-        this.firstName = user.getFirstName();
-        this.lastName = user.getLastName();
-        this.email = user.getEmail();
-        this.password = user.getPassword();
-    }
 
     public Long getId() {
         return id;
