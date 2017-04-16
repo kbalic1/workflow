@@ -1,29 +1,21 @@
-package com.workflow.workflowjobopening.modelsIn;
-
-import com.workflow.workflowjobopening.models.JobOffer;
-import com.workflow.workflowjobopening.models.User;
+package com.workflow.workflowapplications.models.jobopening;
 
 import java.util.Date;
 
-/**
- * Created by tile on 4/8/2017.
- */
+public class JobOffer {
 
-public class JobOfferIn {
-
-
+    private Long Id;
     private String title;
     private Date deadline;
     private  Boolean published;
     private int maxNumberApplicants;
-
     private User user;
 
-    public JobOfferIn() {
+    public JobOffer() {
     }
 
 
-    public JobOfferIn(String title, Date deadline, Boolean published, int maxNumberApplicants, User user) {
+    public JobOffer(String title, Date deadline, Boolean published, int maxNumberApplicants, User user) {
         this.title = title;
         this.deadline = deadline;
         this.published = published;
@@ -31,14 +23,22 @@ public class JobOfferIn {
         this.user = user;
     }
 
-    public JobOfferIn(JobOffer jobOffer) {
+    public JobOffer(JobOffer jobOffer) {
+        this.Id = jobOffer.getId();
         this.title = jobOffer.getTitle();
         this.deadline = jobOffer.getDeadline();
         this.published = jobOffer.getPublished();
         this.maxNumberApplicants = jobOffer.getMaxNumberApplicants();
-        this.user = jobOffer.getUser();
+        this.user = null;
     }
 
+    public long getId() {
+        return Id;
+    }
+
+    public void setId(long id) {
+        Id = id;
+    }
 
     public String getTitle() {
         return title;

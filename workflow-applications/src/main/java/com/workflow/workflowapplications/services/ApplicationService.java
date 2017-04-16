@@ -2,8 +2,11 @@ package com.workflow.workflowapplications.services;
 
 import com.workflow.workflowapplications.models.Applicant;
 import com.workflow.workflowapplications.models.Application;
+import com.workflow.workflowapplications.models.ApplicationExtended;
+import com.workflow.workflowapplications.models.jobopening.JobOffer;
 import com.workflow.workflowapplications.repositories.ApplicantRepository;
 import com.workflow.workflowapplications.repositories.ApplicationRepository;
+import com.workflow.workflowapplications.restclients.JobOpeningClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +36,15 @@ public class ApplicationService {
 
     public Application get(Long id) {
         return applicationRepository.findOne(id);
+    }
+
+    public ApplicationExtended getWithOpening(Long id) {
+        Application application = this.get(id);
+
+        JobOpeningClient jobOpeningClient = new JobOpeningClient();
+        JobOffer jobOffer = jobOpeningClient.getJobOpening(application.getJobOpeningId());
+
+        return new ApplicationExtended(application, jobOffer);
     }
 
     public Collection<Application> getApplications(Applicant applicant, Long jobOpeningId, String status) {

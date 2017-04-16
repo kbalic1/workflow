@@ -1,21 +1,29 @@
 package com.workflow.workflowapplications.models;
 
+import com.workflow.workflowapplications.models.jobopening.JobOffer;
 
-import javax.persistence.*;
-
-
-@Entity
-public class Application {
-
-    @Id
-    @GeneratedValue
+public class ApplicationExtended {
     private Long Id;
-
-    @ManyToOne
-    @JoinColumn(name = "applicantId")
     private Applicant applicant;
     private Long jobOpeningId;
     private String status;
+    private JobOffer jobOffer;
+
+    public ApplicationExtended(Application application, JobOffer jobOffer) {
+        this.Id = application.getId();
+        this.applicant = application.getApplicant();
+        this.jobOpeningId = application.getJobOpeningId();
+        this.status = application.getStatus();
+        this.jobOffer = jobOffer;
+    }
+
+    public JobOffer getJobOffer() {
+        return jobOffer;
+    }
+
+    public void setJobOffer(JobOffer jobOffer) {
+        this.jobOffer = jobOffer;
+    }
 
     public Long getId() {
         return Id;

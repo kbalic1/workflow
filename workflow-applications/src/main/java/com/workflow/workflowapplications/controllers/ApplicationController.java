@@ -2,6 +2,7 @@ package com.workflow.workflowapplications.controllers;
 
 import com.workflow.workflowapplications.models.Applicant;
 import com.workflow.workflowapplications.models.Application;
+import com.workflow.workflowapplications.models.ApplicationExtended;
 import com.workflow.workflowapplications.services.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +26,11 @@ public class ApplicationController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Application getApplication(@PathVariable("id") Long id) {
         return applicationService.get(id);
+    }
+
+    @RequestMapping(value = "/{id}/withOpening", method = RequestMethod.GET)
+    public ApplicationExtended getApplicationWithOpening(@PathVariable("id") Long id) {
+        return applicationService.getWithOpening(id);
     }
 
     @RequestMapping(method = RequestMethod.GET)

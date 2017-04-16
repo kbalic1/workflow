@@ -1,9 +1,13 @@
+/Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/restclients/JobOpeningClient.java
 /Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/controllers/ApplicationController.java
 /Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/repositories/ApplicationRepository.java
-/Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/models/Application.java
 /Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/models/Applicant.java
+/Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/services/ApplicantService.java
+/Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/controllers/ApplicantController.java
+/Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/models/ApplicationExtended.java
+/Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/models/Application.java
+/Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/models/jobopening/JobOffer.java
+/Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/models/jobopening/User.java
 /Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/services/ApplicationService.java
 /Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/WorkflowApplicationsApplication.java
 /Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/repositories/ApplicantRepository.java
-/Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/services/ApplicantService.java
-/Users/Tarik/Documents/workflow/workflow-applications/src/main/java/com/workflow/workflowapplications/controllers/ApplicantController.java
