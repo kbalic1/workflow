@@ -27,6 +27,11 @@ public class EvaluationController {
         return evaluationService.get(id);
     }
 
+    @RequestMapping(value = "/stage/{stageId}", method = RequestMethod.GET)
+    public Collection<Evaluation> getAllWithStageId(@PathVariable("stageId") long stageId) {
+        return evaluationService.getAllWithStageId(stageId);
+    }
+
     @RequestMapping(method = RequestMethod.GET)
     public Collection<Evaluation> getEvaluations(@RequestParam("applicationId") Long applicationId,
                                                  @RequestParam("stageId") Long stageId,

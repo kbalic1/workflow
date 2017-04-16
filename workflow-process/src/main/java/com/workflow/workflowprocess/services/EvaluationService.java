@@ -29,6 +29,10 @@ public class EvaluationService {
         return evaluationRepository.findOne(id);
     }
 
+    public Collection<Evaluation> getAllWithStageId(Long stageId){
+        return evaluationRepository.getAllWithStageId(stageId);
+    }
+
     public Collection<Evaluation> getEvaluations(Long applicationId, Long stageId, int evaluation, String comment){
         return evaluationRepository.findByApplicationIdAndStageIdAndEvaluationAndComment(applicationId, stageId, evaluation, comment);
     }

@@ -23,6 +23,13 @@ public class User {
         this.password = password;
     }
 
+    public User(User u){
+        this.firstName = u.getFirstName();
+        this.lastName = u.getLastName();
+        this.email = u.getEmail();
+        this.password = u.getPassword();
+    }
+
     @Override
     public String toString() {
         return String.format("%s %s", firstName, lastName);
