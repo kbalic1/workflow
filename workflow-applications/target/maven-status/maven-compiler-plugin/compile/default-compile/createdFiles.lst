@@ -1,6 +1,7 @@
 com/workflow/workflowapplications/models/jobopening/User.class
 com/workflow/workflowapplications/controllers/ApplicationController.class
 com/workflow/workflowapplications/WorkflowApplicationsApplication.class
+com/workflow/workflowapplications/MessageRestController.class
 com/workflow/workflowapplications/models/jobopening/JobOffer.class
 com/workflow/workflowapplications/models/ApplicationExtended.class
 com/workflow/workflowapplications/controllers/ApplicantController.class

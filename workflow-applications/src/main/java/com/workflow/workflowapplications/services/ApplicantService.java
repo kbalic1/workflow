@@ -31,6 +31,10 @@ public class ApplicantService {
         return applicantRepository.findByEmailAndFirstNameAndLastName(email, firstName, lastName);
     }
 
+    public Collection<Applicant> getApplicantByEmail(String email) {
+        return applicantRepository.findByEmail(email);
+    }
+
     public Long add(Applicant applicant) {
         applicantRepository.save(applicant);
         return applicant.getId();

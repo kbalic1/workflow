@@ -34,6 +34,11 @@ public class ApplicantController {
         return applicantService.getApplicants(email, firstName, lastName);
     }
 
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public boolean getApplicantByEmail(@RequestParam("email") String email){
+        return (applicantService.getApplicantByEmail(email).isEmpty());
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> addApplicant(@RequestBody Applicant applicant) {
         Long applicantId = applicantService.add(applicant);

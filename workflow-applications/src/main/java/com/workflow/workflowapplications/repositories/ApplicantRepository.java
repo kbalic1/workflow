@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ApplicantRepository extends CrudRepository<Applicant, Long> {
     List<Applicant> findByEmailAndFirstNameAndLastName(String email, String firstName, String lastName);
+    List<Applicant> findByEmail(String email);
 }
