@@ -36,7 +36,7 @@ public class ApplicantController {
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public boolean getApplicantByEmail(@RequestParam("email") String email){
-        return (applicantService.getApplicantByEmail(email).isEmpty());
+        return (applicantService.getApplicantByEmail(email) == null);
     }
 
     @RequestMapping(method = RequestMethod.POST)

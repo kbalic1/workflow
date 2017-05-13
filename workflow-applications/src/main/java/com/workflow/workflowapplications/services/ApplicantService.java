@@ -27,11 +27,12 @@ public class ApplicantService {
         return applicantRepository.findOne(id);
     }
 
+
     public Collection<Applicant> getApplicants(String email, String firstName, String lastName) {
         return applicantRepository.findByEmailAndFirstNameAndLastName(email, firstName, lastName);
     }
 
-    public Collection<Applicant> getApplicantByEmail(String email) {
+    public Applicant getApplicantByEmail(String email) {
         return applicantRepository.findByEmail(email);
     }
 
