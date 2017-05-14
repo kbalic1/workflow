@@ -33,7 +33,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/status", method = RequestMethod.POST)
-    public String login(@RequestHeader  String token) {
+    public String logged(@RequestHeader  String token) {
 
         JSONObject response = new JSONObject();
 
