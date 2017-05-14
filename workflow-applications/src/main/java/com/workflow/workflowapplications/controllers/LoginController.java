@@ -25,7 +25,7 @@ import java.security.interfaces.RSAPublicKey;
 @RequestMapping(value = "/api/login")
 public class LoginController {
 
-    
+
     private LoginService loginService;
     @Autowired
     public void setLoginService(LoginService loginService) {
