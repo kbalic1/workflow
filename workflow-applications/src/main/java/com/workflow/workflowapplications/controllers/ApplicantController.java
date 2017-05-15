@@ -34,11 +34,13 @@ public class ApplicantController {
         return applicantService.getApplicants(email, firstName, lastName);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public boolean getApplicantByEmail(@RequestParam("email") String email){
         return (applicantService.getApplicantByEmail(email) == null);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> addApplicant(@RequestBody Applicant applicant) {
         Long applicantId = applicantService.add(applicant);

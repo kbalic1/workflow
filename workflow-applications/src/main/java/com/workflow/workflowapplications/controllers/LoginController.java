@@ -32,6 +32,7 @@ public class LoginController {
         this.loginService = loginService;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/status", method = RequestMethod.POST)
     public String logged(@RequestHeader  String token) {
 
@@ -65,6 +66,7 @@ public class LoginController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method = RequestMethod.POST)
     public String login(@RequestHeader  String email,
                         @RequestHeader String password) {
