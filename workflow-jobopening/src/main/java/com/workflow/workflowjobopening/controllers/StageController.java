@@ -11,6 +11,7 @@ import java.util.List;
 
 @Component
 @RestController
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3002"})
 @RequestMapping(value = "/stage", produces = "application/json")
 public class StageController {
 

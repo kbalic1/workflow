@@ -1,4 +1,4 @@
-package com.workflow.workflowapplications.controllers;
+package com.workflow.workflowjobopening.controllers;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -7,7 +7,7 @@ import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.workflow.workflowapplications.services.LoginService;
+import com.workflow.workflowjobopening.services.LoginService;
 import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -66,6 +66,7 @@ public class LoginController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method = RequestMethod.POST)
     public String login(@RequestHeader  String email,
                         @RequestHeader String password) {
