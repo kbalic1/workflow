@@ -1,7 +1,6 @@
 package com.workflow.workflowjobopening.modelsIn;
 
 import com.workflow.workflowjobopening.models.JobOffer;
-import com.workflow.workflowjobopening.models.User;
 
 import java.util.Date;
 
@@ -16,19 +15,19 @@ public class JobOfferIn {
     private Date deadline;
     private  Boolean published;
     private int maxNumberApplicants;
-
-    private User user;
+    private String token;
 
     public JobOfferIn() {
     }
 
 
-    public JobOfferIn(String title, Date deadline, Boolean published, int maxNumberApplicants, User user) {
+    public JobOfferIn(String title, Date deadline, Boolean published, int maxNumberApplicants, String token) {
         this.title = title;
         this.deadline = deadline;
         this.published = published;
         this.maxNumberApplicants = maxNumberApplicants;
-        this.user = user;
+        this.token = token;
+
     }
 
     public JobOfferIn(JobOffer jobOffer) {
@@ -36,7 +35,6 @@ public class JobOfferIn {
         this.deadline = jobOffer.getDeadline();
         this.published = jobOffer.getPublished();
         this.maxNumberApplicants = jobOffer.getMaxNumberApplicants();
-        this.user = jobOffer.getUser();
     }
 
 
@@ -72,11 +70,11 @@ public class JobOfferIn {
         this.maxNumberApplicants = maxNumberApplicants;
     }
 
-    public User getUser() {
-        return user;
+    public String getToken() {
+        return token;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setToken(String token) {
+        this.token = token;
     }
 }

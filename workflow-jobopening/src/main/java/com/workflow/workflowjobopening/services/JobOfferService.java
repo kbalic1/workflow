@@ -1,9 +1,13 @@
 package com.workflow.workflowjobopening.services;
 
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import com.workflow.workflowjobopening.models.JobOffer;
+import com.workflow.workflowjobopening.models.User;
 import com.workflow.workflowjobopening.modelsIn.JobOfferIn;
 import com.workflow.workflowjobopening.modelsOut.JobOfferOut;
 import com.workflow.workflowjobopening.repositories.JobOfferRepository;
+import com.workflow.workflowjobopening.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +22,9 @@ public class JobOfferService {
 
     @Autowired
     private JobOfferRepository jobOfferRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     public JobOfferOut getById(Long id) {
 
@@ -46,7 +53,10 @@ public class JobOfferService {
 
     public Boolean importFromInput(JobOfferIn jobOfferIn){
 
-        final JobOffer jobOffer = new JobOffer(jobOfferIn);
+        DecodedJWT jwt = JWT.decode(jobOfferIn.getToken());
+        String username = jwt.getClaim("email").toString();
+        User user = userRepository.findByEmail(username);
+        final JobOffer jobOffer = new JobOffer(jobOfferIn, user);
         jobOfferRepository.save(jobOffer);
         jobOfferRepository.flush();
         return true;

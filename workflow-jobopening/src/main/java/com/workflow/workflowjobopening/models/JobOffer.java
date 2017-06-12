@@ -35,12 +35,12 @@ public class JobOffer {
         this.user = user;
     }
 
-    public JobOffer(JobOfferIn jobOfferIn) {
+    public JobOffer(JobOfferIn jobOfferIn, User user) {
         this.title = jobOfferIn.getTitle();
         this.deadline = jobOfferIn.getDeadline();
         this.published = jobOfferIn.getPublished();
         this.maxNumberApplicants = jobOfferIn.getMaxNumberApplicants();
-       // this.user = jobOfferIn.getUser();
+        this.user = user;
     }
 
     public Long getId() {
