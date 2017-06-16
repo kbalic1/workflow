@@ -1,8 +1,11 @@
+/Users/valjic/Projects/workflow/server/workflow-jobopening/src/main/java/com/workflow/workflowjobopening/controllers/LoginController.java
 /Users/valjic/Projects/workflow/server/workflow-jobopening/src/main/java/com/workflow/workflowjobopening/models/Role.java
 /Users/valjic/Projects/workflow/server/workflow-jobopening/src/main/java/com/workflow/workflowjobopening/modelsIn/JobOfferIn.java
+/Users/valjic/Projects/workflow/server/workflow-jobopening/src/main/java/com/workflow/workflowjobopening/services/LoginService.java
 /Users/valjic/Projects/workflow/server/workflow-jobopening/src/main/java/com/workflow/workflowjobopening/models/JobOffer.java
 /Users/valjic/Projects/workflow/server/workflow-jobopening/src/main/java/com/workflow/workflowjobopening/WorkflowJobOpeningsApplication.java
 /Users/valjic/Projects/workflow/server/workflow-jobopening/src/main/java/com/workflow/workflowjobopening/models/User.java
+/Users/valjic/Projects/workflow/server/workflow-jobopening/src/main/java/com/workflow/workflowjobopening/repositories/LoginRepository.java
 /Users/valjic/Projects/workflow/server/workflow-jobopening/src/main/java/com/workflow/workflowjobopening/services/StageService.java
 /Users/valjic/Projects/workflow/server/workflow-jobopening/src/main/java/com/workflow/workflowjobopening/repositories/UserRepository.java
 /Users/valjic/Projects/workflow/server/workflow-jobopening/src/main/java/com/workflow/workflowjobopening/modelsIn/RoleIn.java

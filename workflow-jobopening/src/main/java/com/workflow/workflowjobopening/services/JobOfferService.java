@@ -1,7 +1,13 @@
 package com.workflow.workflowjobopening.services;
 
 import com.auth0.jwt.JWT;
+import com.auth0.jwt.JWTVerifier;
+import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.auth0.jwt.exceptions.JWTCreationException;
+import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import java.io.UnsupportedEncodingException;
 import com.workflow.workflowjobopening.models.JobOffer;
 import com.workflow.workflowjobopening.models.User;
 import com.workflow.workflowjobopening.modelsIn.JobOfferIn;
@@ -25,6 +31,9 @@ public class JobOfferService {
 
     @Autowired
     private UserRepository userRepository;
+
+    private Algorithm algorithm;
+    private JWTVerifier verifier;
 
     public JobOfferOut getById(Long id) {
 
@@ -52,14 +61,26 @@ public class JobOfferService {
     }
 
     public Boolean importFromInput(JobOfferIn jobOfferIn){
+        try {
+            algorithm = Algorithm.HMAC256("secret");
+            verifier = JWT.require(algorithm)
+                    .withIssuer("workflow-team")
+                    .build(); //Reusable verifier instance
+            DecodedJWT verifyJwt = verifier.verify(jobOfferIn.getToken());
+            DecodedJWT jwt = JWT.decode(jobOfferIn.getToken());
+            String username = jwt.getClaim("email").toString();
+            User user = userRepository.findByEmail(username);
+            final JobOffer jobOffer = new JobOffer(jobOfferIn, user);
+            jobOfferRepository.save(jobOffer);
+            jobOfferRepository.flush();
+            return true;
 
-        DecodedJWT jwt = JWT.decode(jobOfferIn.getToken());
-        String username = jwt.getClaim("email").toString();
-        User user = userRepository.findByEmail(username);
-        final JobOffer jobOffer = new JobOffer(jobOfferIn, user);
-        jobOfferRepository.save(jobOffer);
-        jobOfferRepository.flush();
-        return true;
+        } catch (UnsupportedEncodingException exception){
+
+        } catch (JWTVerificationException exception){
+
+        }
+        return false;
     }
 
     public void removeById (Long jobOfferId){

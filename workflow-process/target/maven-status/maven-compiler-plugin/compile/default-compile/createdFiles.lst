@@ -1,0 +1,3 @@
+com/workflow/workflowprocess/services/LoginService.class
+com/workflow/workflowprocess/controllers/LoginController.class
+com/workflow/workflowprocess/repositories/LoginRepository.class
